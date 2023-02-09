@@ -17,6 +17,11 @@ export default function Home() {
   const { scale } = useContext(ScaleContext);
   const symbol = scale === 'fahrenheit' ? '℉' : '℃';
 
+  const background = new URL(
+    '/src/assets/cloud-background.png',
+    import.meta.url
+  ).href;
+
   const date = new Date();
 
   const handleFetch = useCallback(() => {
@@ -41,7 +46,12 @@ export default function Home() {
   useEffect(handleFetch, [handleFetch]);
 
   return (
-    <div className="relative flex flex-col place-items-center bg-app-dark-blue bg-[linear-gradient(rgba(30,33,58),rgba(30,33,58,0.8)),url('src/assets/cloud-background.png')] bg-[50%_10%] bg-no-repeat px-3 py-[1.125rem] max-lg:min-h-screen lg:w-[28.75rem] lg:px-[2.875rem] lg:py-[2.625rem]">
+    <div
+      style={{
+        backgroundImage: `linear-gradient(rgba(30,33,58),rgba(30,33,58,0.8)),url(${background})`,
+      }}
+      className="relative flex flex-col place-items-center bg-app-dark-blue bg-[50%_10%] bg-no-repeat px-3 py-[1.125rem] max-lg:min-h-screen lg:w-[28.75rem] lg:px-[2.875rem] lg:py-[2.625rem]"
+    >
       <Nav nav={nav} toggleNav={() => toggleNav()} />
       <div className="flex w-full justify-between">
         <button
