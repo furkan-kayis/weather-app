@@ -6,7 +6,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://lustrous-cuchufli-0d8164.netlify.app/">
+    <a href="https://lighthearted-snickerdoodle-4cabf9.netlify.app/">
       Demo
     </a>
     <span>
